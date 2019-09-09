@@ -144,7 +144,8 @@ public class SocketServer {
 
                     eventParams = Arguments.createMap();
                     eventParams.putInt("id", socket.getPort());
-
+                    eventParams.putString("ip", socket.getInetAddress().toString());
+                    
                     sendEvent(mReactContext, event_clientConnect, eventParams);
 
                     Log.d(eTag, "#" + count + " from " + socket.getInetAddress() + ":" + socket.getPort());
